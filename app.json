@@ -2,17 +2,6 @@
   "name": "n8n",
   "description": "workflow $APP",
   "success_url": "/",
-  "healthchecks": {
-    "web": [
-        {
-            "type":        "startup",
-            "name":        "web check",
-            "description": "Checking if the app responds to the / endpoint",
-            "path":        "/",
-            "attempts": 3
-        }
-    ]
-  },
   "dokku": {
     "volumes":[
     {
