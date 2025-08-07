@@ -1,0 +1,31 @@
+{
+  "name": "n8n",
+  "description": "workflow: $APP",
+  "success_url": "/"
+  },
+  "healthchecks": {
+    "web": [
+        {
+            "type":        "startup",
+            "name":        "web check",
+            "description": "Checking if the app responds to the / endpoint",
+            "path":        "/",
+            "attempts": 3
+        }
+    ]
+  },
+  "dokku": {
+    "volumes":[
+    {
+      "host": "/var/lib/dokku/data/storage/$APP",
+      "app": "/home/node/.n8n",
+      "phases" : "deploy,run"
+    }
+    ],
+    "plugins": [
+     {"name":"postgres"
+     ,"commands":["postgres:create $APP", "postgres:link $APP $APP"]
+     }
+    ]
+  }
+}
