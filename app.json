@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "description": "workflow: $APP",
+  "description": "workflow $APP",
   "success_url": "/"
   },
   "healthchecks": {
